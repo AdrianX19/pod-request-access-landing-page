@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Chivo', sans-serif;
+}
+
+body {
+  background-color: rgba(18, 23, 37, 1);
+}
+
+main {
+  min-height: 100vh;
+  padding: 62px 24px;
+  position: relative;
+  text-align: center;
+}
+
+main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-image: url('../assets/mobile/image-host.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: .1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 57px;
+}
+
+.title {
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: 300;
+  color: #54E6AF;
+  text-transform: uppercase;
+}
+
+.title span {
+  color: white;
+}
+
+.description {
+  margin: 16px 0 32px 0;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 25px;
+  color: #C2CBE5;
+  opacity: .8;
+}
+
+form {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+form::after {
+  content: attr(error-message);
+  position: absolute;
+  top: -8px;
+  left: 0;
+  margin-left: 32px;
+  transform: translateY(-100%);
+  color: #FB3E3E;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.platforms {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6px 0 6px;
+  margin-bottom: 48px;
+}
+
+
+.platforms img {
+  display: block;
+  object-fit: contain;
+  height: 17px;
+  max-width: 73px;
+  opacity: .6;
+}
+
+.platforms div:last-child img {
+  max-width: 77px;
+}
+
+input,
+button {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 28px;
+  padding: 9px 32px;
+  border: none;
+  margin-bottom: 16px;
+  border-radius: 50px;
+
+}
+
+input {
+  background: #2C344B;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: white;
+  opacity: .5;
+  vertical-align: middle;
+}
+
+button {
+  color: #121725;
+  background-color: #54E6AF;
+  box-shadow: 0 25px 20px -20px rgba(84, 230, 175, .5);
+  transition: .25s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #B3FFE2;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 50px 40px;
+    text-align: left;
+  }
+
+  main::after {
+    background-image: url('../assets/tablet/image-host.jpg'), url('../assets/desktop/bg-pattern-dots.svg');
+    background-size: initial;
+    background-position: top right, bottom left 40px;
+    background-attachment: initial;
+    opacity: .9;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 635px;
+    margin-top: 150px;
+    background-color: rgba(18, 23, 37, 1);
+  }
+
+  .title {
+    margin-top: 93px;
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .description {
+    margin: 30px 190px 40px 0;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  form {
+    order: 0;
+    flex-direction: row;
+  }
+
+  form::after {
+    bottom: -8px;
+    transform: translateY(100%);
+  }
+
+  .platforms {
+    padding: 0;
+    margin: 64px 100px 0 0;
+  }
+
+  .platforms img {
+    height: 29px;
+    max-width: 125px;
+  }
+
+  .platforms div:last-child img {
+    max-width: 129px;
+  }
+
+  input,
+  button {
+    padding: 14px 32px;
+    margin-bottom: 0;
+  }
+
+  input {
+    border-radius: 50px 0 0 50px;
+    width: 327px;
+  }
+
+  button {
+    border: 5px solid #2C344B;
+    padding: 9px 27px;
+    transform: translateX(-50%);
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  main {
+    padding: 130px 165px 30px 165px;
+  }
+
+  main::after {
+    background-image: url('../assets/desktop/bg-pattern-dots.svg'), url('../assets/desktop/image-host.jpg');
+    background-position: 100% calc(50% + 320px), right center;
+    opacity: .9;
+  }
+
+  .logo {
+    transform: translateY(-50%);
+  }
+
+  .container {
+    width: 724px;
+    margin-top: 74px;
+  }
+
+  .title {
+    margin-top: 88px;
+    font-size: 52px;
+    line-height: 62px;
+  }
+
+  .description {
+    margin: 24px 278px 40px 0;
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media (max-height: 800px) {
+  .container {
+    margin-top: 10px;
+  }
+}
